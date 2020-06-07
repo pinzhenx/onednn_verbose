@@ -58,6 +58,7 @@ def _build_stats_row(stats, labels):
                 if other != label and other in stats and \
                         big_difference(stat['avg'], stats[other]['avg']):
                     avg = f'*{avg}*'  # highlight the cell content
+                    break
             row_data += [cnt, avg, mmin, mmax, coeff]
         else:
             row_data += ['-', '-', '-', '-', '-']
