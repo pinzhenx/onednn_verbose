@@ -8,7 +8,7 @@ def merge_csv(file_events):
     for fname, events in file_events.items():
         for e in events:
             lines.append(
-                f"{fname},{e['action']},{e['eng']},{e['name']},{e['impl']},{e['prop']},{e['format']},{e['aux']},{e['problem']},{e['time']}")
+                f"\"{fname}\",\"{e['action']}\",\"{e['eng']}\",\"{e['name']}\",\"{e['impl']}\",\"{e['prop']}\",\"{e['format']}\",\"{e['aux']}\",\"{e['problem']}\",\"{e['time']}\"")
 
     merge_name = '_'.join(file_events.keys()) + '.csv'
     with open(merge_name, 'w+') as f:
