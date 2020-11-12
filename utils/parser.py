@@ -7,7 +7,8 @@ def extract_label_file(args):
     if not args:
         label_file.append(['(stdin)', sys.stdin])
     else:
-        for arg in args:
+        flatten = lambda l: [item for ll in l for item in ll]
+        for arg in flatten(args):
             if ':' in arg:
                 label_file.append(arg.split(':'))
             else:
